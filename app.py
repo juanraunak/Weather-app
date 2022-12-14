@@ -26,11 +26,14 @@ def home():
     temp = data['main']['temp']
     print(temp)
     temp_data =  {"temp" : data['main']['temp']} 
-    return render_template("index.html", data = temp_data )
+    what_data =  data['weather'][0]['main'] 
+    print(what_data)
+    
+    return render_template("index.html", data = temp_data, city = city, what = what_data )
 
 @app.route('/log_in') #log in 
 def log_in():
     return "log inn"
 
 if __name__ =='__main__':  
-    app.run(debug = True)  
+    app.run(debug = True)   
