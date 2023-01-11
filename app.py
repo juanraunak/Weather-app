@@ -23,7 +23,7 @@ def home():
 
     r =  requests.get(url=url)
     data = r.json()
-    temp = data['main']['temp']
+    temp = data['main']['temp'] 
     print(temp)
     temp_data =  {"temp" : data['main']['temp']} 
     what_data =  data['weather'][0]['main'] 
