@@ -1,46 +1,93 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>weather</title>
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <style>
+        /* add your own custom CSS here to style the page */
+        /* Example */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+        }
+        /* navigation bar */
+        nav {
+            background-color: #158ac9;
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        /* heading title */
+        h1 {
+            margin: 0;
+            font-size: 32px;
+            text-align: center;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-  <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        /* form container */
+        form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+        }
 
+        /* input field */
+        input[type="text"] {
+            width: 50%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 2px solid #ddd;
+            font-size: 16px;
+            outline: none;
+        }
+        /* form button */
+        button {
+            width: 10%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+        button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet'>
 </head>
 
 <body>
-  <nav class="row" style="background: #158ac9; color: white;">
-    <h1 class="col-md-3 text-center">weather</h1>
-  </nav>
-  <br />
-  <br />
-  <center class="row">
-    <form method="post" class="col-md-6 col-md-offset-3">
-      <div class="input-group">
-        <input type="text" class="form-control" name="city" placeholder="Search">
-        <div class="input-group-btn">
-          <button class="btn btn-primary" type="submit">
-            <i class="glyphicon glyphicon-search"></i>
-          </button>
-        </div>
-        <form>
-  </center>
-  <div class="row">
-    {% if data  %}
-    <div class="col-md-6 col-md-offset-3">
+    <nav class="row">
+        <h1 class="col-md-3 text-center">weather</h1>
+    </nav>
+    <br />
+    <br />
+    <center class="row">
+        <form method="post" class="col-md-6 col-md-offset-3">
+            <div class="input-group">
+                <input type="text" class="form-control" name="city" placeholder="Search">
+                <div class="input-group-btn">
+                    <button class="btn btn-primary" type="submit">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </div>
+                <form>
+    </center>
+    <div class="row">
+        {% if data %}
+        <div class="col-md-6 col-md-offset-3">
 
-      <h2>  {{city}} temperature is {{data.temp}}</h5>
-        <h2>  it is  {{what}} </h5>
-
-    </div>
-    {% endif %}
-  </div>
-</body>
-</html>
+            <h2>{{city
